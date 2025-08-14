@@ -13,7 +13,8 @@ from transformers import BertForSequenceClassification, RobertaForSequenceClassi
 from utils.functions import restore_model, save_model, EarlyStopping
 from utils.metrics import AverageMeter, Metrics, OID_Metrics
 from torch.utils.data import Dataset
-from transformers import AdamW, get_linear_schedule_with_warmup
+from torch.optim import AdamW
+from transformers import get_linear_schedule_with_warmup
 from sklearn.neighbors import LocalOutlierFactor
 import pandas as pd
 from scipy.stats import norm as dist_model

@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.getcwd())
+
 from configs.single_turn.base import ParamManager, add_config_param
 from data.single_turn.base import DataManager
 from methods.single_turn import method_map

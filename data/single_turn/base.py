@@ -101,7 +101,7 @@ def prepare_data(args, logger, label_list, bm):
         
     if args.ood:
         
-        ood_data_path = os.path.join(args.data_path, 'out-of-scope', args.ood_dataset)
+        ood_data_path = os.path.join(args.data_path, 'out-of-scope')
         ood_bm = bm['ood_data'][args.ood_dataset]
         label_map[ood_bm['ood_label']] = args.ood_label_id
         
@@ -182,9 +182,9 @@ def get_data(args, logger, data_path, bm, label_map):
     else:
         text_data = get_t_data(args, data_args)
     
-        video_feats_path = os.path.join(data_args['data_path'], args.video_data_path, args.video_feats_path)
+        video_feats_path = os.path.join(data_args['data_path'], 'swin_roi.pkl')
         video_data = get_v_a_data(data_args, video_feats_path, args.video_seq_len)
-        audio_feats_path = os.path.join(data_args['data_path'], args.audio_data_path, args.audio_feats_path)
+        audio_feats_path = os.path.join(data_args['data_path'], 'wavlm_feats.pkl')
       
         audio_data = get_v_a_data(data_args, audio_feats_path, args.audio_seq_len)  
      

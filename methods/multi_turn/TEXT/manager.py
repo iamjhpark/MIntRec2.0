@@ -12,7 +12,8 @@ from utils.functions import restore_model, save_model, EarlyStopping
 from utils.metrics import AverageMeter, Metrics, OID_Metrics
 from torch.utils.data import Dataset
 from torch.optim.lr_scheduler import ReduceLROnPlateau
-from transformers import AdamW, get_linear_schedule_with_warmup
+from torch.optim import AdamW
+from transformers import get_linear_schedule_with_warmup
 import itertools
 from itertools import cycle
 import pandas as pd
@@ -65,7 +66,7 @@ class TEXT:
             {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)], 'weight_decay': 0.0}
         ]
         
-        optimizer = AdamW(optimizer_grouped_parameters, lr = args.lr, correct_bias=False)
+        optimizer = AdamW(optimizer_grouped_parameters, lr = args.lr)
         
         print('num_train_examples:', args.num_train_examples)
         num_train_optimization_steps = int(args.num_train_examples / args.train_bs) * args.num_train_epochs

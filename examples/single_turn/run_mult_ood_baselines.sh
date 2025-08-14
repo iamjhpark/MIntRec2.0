@@ -16,7 +16,7 @@ do
                     --dataset 'MIntRec2.0' \
                     --data_mode 'ood' \
                     --ood_dataset 'MIntRec2.0-OOD' \
-                    --data_path '/home/sharing/Datasets/MIntRec2.0' \
+                    --data_path 'data' \
                     --logger_name ${method}_${ood_detection_method} \
                     --multimodal_method $method \
                     --method ${method}\

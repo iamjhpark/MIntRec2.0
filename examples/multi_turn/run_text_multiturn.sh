@@ -11,7 +11,7 @@ do
             --dataset 'MIntRec2.0' \
             --ood_dataset 'MIntRec2.0-OOD' \
             --data_mode 'multiturn' \
-            --data_path '/home/sharing/Datasets/MIntRec2.0' \
+            --data_path 'data' \
             --logger_name ${method}_${ood_detection_method} \
             --multiturn \
             --multimodal_method $method \
@@ -38,7 +38,7 @@ done
 #             python run.py \
 #             --dataset 'MIntRec2.0' \
 #             --ood_dataset 'MIntRec2.0-OOD' \
-#             --data_path '/home/sharing/Datasets/MIntRec2.0' \
+#             --data_path 'data' \
 #             --logger_name ${method}_${ood_detection_method} \
 #             --multimodal_method $method \
 #             --method ${method}\
@@ -66,7 +66,7 @@ done
 #                 python run.py \
 #                 --dataset 'MIntRec2.0' \
 #                 --ood_dataset 'MIntRec2.0-OOD' \
-#                 --data_path '/home/sharing/Datasets/MIntRec2.0' \
+#                 --data_path 'data' \
 #                 --logger_name ${method}_${ood_detection_method} \
 #                 --multimodal_method $method \
 #                 --method ${method}\
